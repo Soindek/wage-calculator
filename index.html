@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+    <head>  
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Közszolgálati tisztviselő illetménykalkulátor</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css" type="text/css">
+    
+    </head>
+    
+    <body>
+        
+        <div class="container">
+            <div class="sticky-top">
+                <h3>Havi bruttó illetmény:</h3>
+                <h1 id="finalCount">0 Ft</h1>
+                <hr>
+            </div>
+
+            <form>
+
+                <fieldset disabled>
+                    <div class="form-group" id="form-top">
+                        <label for="salary-base">Illetmény alap:</label>
+                        <div class="input-group">
+                            <input type="text" name="salary-base" id="salary-base" class="form-control" value="38650" required>
+                            <div class="input-group-addon">Ft</div>
+                        </div>
+                        <small class="form-text text-muted">A közszolgálati tisztviselőkről szóló 2011. évi CXCIX. törvény 132. §-a szerinti az illetményalap mérétke 2017. évben 38 650 forint.</small>
+                    </div>
+                </fieldset>
+                
+                <div class="form-group">
+                    <label for="salary-base" >Iskolai végezttség:</label>
+                    <div class="form-control">
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="education" id="diploma" checked> Felsőfokú
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="education" id="high"> Középfokú
+                          </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="years">Ledolgozott évek száma:</label>
+                    <select name="years" id="years-for-diploma" class="form-control" style="display: inline-block;">
+                        <option value="3.1">0 - 1</option>
+                        <option value="3.2">1 - 2</option>
+                        <option value="3.3">2 - 3</option>
+                        <option value="3.5">3 - 4</option>
+                        <option value="3.7">4 - 6</option>
+                        <option value="3.9">6 - 8</option>
+                        <option value="4.2">8 - 10</option>
+                        <option value="4.4">10 - 12</option>
+                        <option value="4.6">12 - 14</option>
+                        <option value="4.8">14 - 16</option>
+                        <option value="5.1">16 - 19</option>
+                        <option value="5.2">19 - 22</option>
+                        <option value="5.3">22 - 25</option>
+                        <option value="5.6">25 - 29</option>
+                        <option value="5.7">29 - 33</option>
+                        <option value="5.7">33 - 37</option>
+                        <option value="6">37 év felett</option>
+                    </select>
+                    <select name="years" id="years-for-graduation" class="form-control" style="display: none;">
+                        <option value="1.79">0 - 2</option>
+                        <option value="1.9">2 - 4</option>
+                        <option value="2">4 - 6</option>
+                        <option value="2.2">6 - 8</option>
+                        <option value="2.25">8 - 10</option>
+                        <option value="2.3">10 - 12</option>
+                        <option value="2.5">12 - 15</option>
+                        <option value="2.6">15 - 18</option>
+                        <option value="2.65">18 - 21</option>
+                        <option value="2.7">21 - 24</option>
+                        <option value="2.8">24 - 27</option>
+                        <option value="2.85">27 - 29</option>
+                        <option value="2.9">29 - 31</option>
+                        <option value="3.3">31 - 33</option>
+                        <option value="4">33 - 35</option>
+                        <option value="4.2">35 - 37</option>
+                        <option value="4.4">37 év felett</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="workplace">Munkavégzés helye:</label>
+                    <select name="workplace" id="workplace" class="form-control">
+                        <option value="0">Alkotmánybíróság Hivatala</option>
+                        <option value="1">Állambiztonsági Szolgálatok Történeti Levéltár</option>
+                        <option value="1">Államháztartásról szóló törvény alapján kijelölt kormányzati ellenőrzési szerv</option>
+                        <option value="0">Állami Számvevőszék</option>
+                        <option value="1">Budapest és Pest megye területére kiterjedő illetékességű területi szerv</option>
+                        <option value="2">Büntetés-végrehajtás</option>
+                        <option value="3">Büntetés-végrehajtás megyei szintű belső igazgatási szerve</option>
+                        <option value="1">Egészségbiztosítási szerv központi szerve</option>
+                        <option value="3">Egészségbiztosítási szerv megyei szintű belső igazgatási szerve</option>
+                        <option value="1">Egészségügyi intézményekkel kapcsolatos feladatokat együttesen ellátó központi hivatal</option>
+                        <option value="2">Egyéb központi államigazgatási szerv</option>
+                        <option value="1">Élelmiszerlánc-felügyeleti szerv</option>
+                        <option value="1">Európai támogatásokat auditáló szerv</option>
+                        <option value="2">Fővárosi és megyei kormányhivatal</option>
+                        <option value="4">Fővárosi és megyei kormányhivatal járási (fővárosi kerületi) szintű szerve</option>
+                        <option value="1">Gazdasági Versenyhivatal</option>
+                        <option value="x">HIBÁS Helyi önkormányzat (nincs kiegszítés - 20 -30 -40%)</option>
+                        <option value="2">Katasztrófavédelem </option>
+                        <option value="3">Katasztrófavédelem megyei szintű belső igazgatási szerve</option>
+                        <option value="1">Kincstár központi szerv</option>
+                        <option value="3">Kormány által intézményfenntartásra kijelölt szerv megyei szintű belső igazgatási szerve</option>
+                        <option value="1">Közbeszerzési Hatóság</option>
+                        <option value="3">Központi államigazgatási szerv megyei szintű területi szerve</option>
+                        <option value="0">Köztársasági Elnöki Hivatal</option>
+                        <option value="1">Külgazdasági tevékenységet irányító központi hivatal</option>
+                        <option value="0">Magyar Energetikai és Közmű-szabályozási Hivatal</option>
+                        <option value="1">Magyar Művészeti Akadémia Titkársága</option>
+                        <option value="1">Magyar Tudományos Akadémia Titkársága</option>
+                        <option value="1">Minisztérium vagy a költségvetési fejezetet irányító más szerv</option>
+                        <option value="1">Nemzeti Adatvédelmi és Információszabadság Hatóság</option>
+                        <option value="1">Nemzeti Emlékezet Bizottságának Hivatala</option>
+                        <option value="1">Nemzeti Földalapkezelő Szervezet</option>
+                        <option value="0">Nemzeti Média- és Hírközlési Hatóság</option>
+                        <option value="0">Nemzeti Választási Iroda</option>
+                        <option value="2">Nyugdíjfolyósító</option>
+                        <option value="1">Országos hatáskörű szervnek nyilvánított központi költségvetési szerv</option>
+                        <option value="0">Országgyűlés Hivatala</option>
+                        <option value="0">Országgyűlési Őrség</option>
+                        <option value="2">Rendőrség</option>
+                        <option value="3">Rendőrség megyei szintű belső igazgatási szerve</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="diversion">Eltérítés mértéke:</label>
+                    <div id="diversion-forms">
+                        <select name="diversion" id="diversion" class="form-control">
+                            <option value="true" selected>+</option>
+                            <option value="false">-</option>
+                        </select>
+                        <div class="input-group">
+                            <input type="number" name="rate" id="rate" class="form-control" placeholder="pl. 20">
+                            <div class="input-group-addon">%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="languages">
+                    <div class="form-group">
+                        <label for="num-of-languages">Különböző nyelvekből szerzett nyelvvizsgák száma:</label>
+                        <input type="number" id="num-of-languades" class="form-control" placeholder="pl. 1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lang">Nyelv:</label>
+                        <select name="lang" id="lang" class="form-control">
+                            <option value="true" selected>angol, francia, német, arab, kínai vagy orosz</option>
+                            <option value="true">munkakör betöltése során használt egyéb nyelv</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lang-level">Nyelvvizsga fokozata:</label>
+                        <select name="lang-level" id="lang-level" class="form-control">
+                            <option value="0" selected>felső</option>
+                            <option value="1">közép</option>
+                            <option value="2">alap</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lang-type">Nyelvvizsga típusa:</label>
+                        <select name="lang-type" id="lang-type" class="form-control">
+                            <option value="0" selected>komplex</option>
+                            <option value="1">szóbeli</option>
+                            <option value="2">írásbeli</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="custom-control custom-checkbox" for="another-certificate">
+                            <input type="checkbox" id="another-certificate" class="custom-control-input">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description">Van ugyanazen nyelvből különböző fokozatú és típusú nyelvvizsgám!</span>
+                        </label>
+                    </div>
+                </div>
+                <!--
+                <div>
+                    <label for="hours">Napi munkaidő (óra):</label>
+                    <input type="radio" name="hours" id="eight" checked required>8
+                    <input type="radio" name="hours" id="six" required>6
+                    <input type="radio" name="hours" id="four" required>4
+                </div>
+                <div>
+                    <label for="boss">Vezető beosztású?</label>
+                    <input type="radio" name="boss" id="non-boss" checked required>nem
+                    <input type="radio" name="boss" id="boss" required>igen
+                </div>
+                -->
+
+
+            </form>
+            
+        </div>
+        
+        
+        
+        
+        <script src="calc.js"></script>
+    
+    </body>
+
+</html>

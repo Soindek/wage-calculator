@@ -1,0 +1,34 @@
+body {
+    margin: 0px auto;
+    max-width: 620px;
+}
+
+.container {
+    padding: 0 25px 0 25px;
+}
+
+.sticky-top {
+    background: #fff;
+    padding-top: 25px;
+}
+
+hr {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+h1 {
+    margin: 20px 0;
+}
+
+#form-top {
+    padding-top: 20px;
+}
+
+#diversion {
+    width: 60px;
+}
+
+#diversion-forms {
+    display: flex;
+}
